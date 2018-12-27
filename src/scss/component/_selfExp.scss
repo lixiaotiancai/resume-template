@@ -1,0 +1,141 @@
+
+@keyframes expItemShining {
+    from {
+        box-shadow: 0 0 0 2px #FFD700;
+    }
+    to {
+        box-shadow: 0 0 7px 7px #FFD700;
+    }
+}
+
+%selfexp {
+  width: 100%;
+  height: 45vh;
+  min-height: 200px;
+  display: flex;
+
+  .exp-tt-wrapper {
+    width: 40%;
+    height: 100%;
+    background: url("http://coding.imweb.io/img/project/resume/bg.png");
+    background-color: rgb(130,189,164);
+    text-align: right;
+    padding: 20px;
+
+    .exp-tt {
+      font-size: 32px;
+      color: #FFD700;
+      text-shadow: 4px 4px 10px #000;
+    }
+
+    .exp-tt-en {
+      font-size: 25px;
+      color: #fff;
+    }
+
+    .exp-tt-instruction {
+      margin-top: 12px;
+      font-size: 18px;
+      color: #4D4D4D;
+    }
+  }
+
+  .exp-main-container {
+    width: 60%;
+    height: 100%;
+    background: url("http://coding.imweb.io/img/project/resume/bg.png");
+    background-color: rgb(161,215,180);
+    padding: 26px;
+    font-size: 18px;
+    color: #1E1E1E;
+    position: relative;
+
+    .exp-main-wrapper {
+      margin-left: 10px;
+      position: relative;
+      padding-bottom: 10px;
+      cursor: pointer;
+
+      &::before {
+        content: "";
+        height: 10px;
+        width: 10px;
+        background: #FFFF00;
+        box-shadow: 0 0 0 3px #FFD700;
+        border-radius: 50%;
+        position: absolute;
+        top: 5px;
+        left: -25px;
+      }
+
+      &:hover.exp-main-wrapper::before {
+        animation: expItemShining 0.5s linear alternate infinite;
+      }
+
+      .exp-duration {
+        font-size: 18px;
+      }
+
+      .exp-school {
+        font-size: 18px;
+      }
+
+      .exp-introduction {
+        font-size: 16px;
+      }
+    }
+
+    &::before {
+      content: "";
+      width: 1px;
+      height: 80%;
+      background: linear-gradient(#999 80%, transparent);
+      background: -o-linear-gradient(#999 80%, transparent);
+      background: -webkit-linear-gradient(#999 80%, transparent);
+      position: absolute;
+      top: 28px;
+      left: 16px;
+    }
+  }
+}
+
+@media screen and (max-width: 768px){
+  %selfexp {
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    // min-width: 450px;
+    .exp-tt-wrapper {
+      width: 100%;
+      height: 30vh;
+      background-color: rgb(130,189,164);
+      text-align: left;
+      padding-top: 15%;
+    }
+
+    .exp-main-container {
+      width: 100%;
+      height: 70vh;
+      background-color: rgb(161,215,180);
+
+      .exp-main-wrapper {
+
+        &::before {
+          content: "";
+          height: 10px;
+          width: 10px;
+          background: #FFFF00;
+          box-shadow: 0 0 0 3px #FFD700;
+          border-radius: 50%;
+          position: absolute;
+          top: 5px;
+          left: -25px;
+        }
+
+        &:active.exp-main-wrapper::before {
+          animation: expItemShining 0.5s linear alternate infinite;
+        }
+      }
+    }
+  }
+}

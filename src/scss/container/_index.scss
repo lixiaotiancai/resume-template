@@ -1,0 +1,49 @@
+@import 'component/selfinfo';
+@import 'component/selfintro';
+@import 'component/selfexp';
+@import 'component/selfskill';
+@import 'component/selfproject';
+
+#root {
+  width: 100%;
+  .self-info {
+    width:100%;
+
+    .info-container {
+      @extend %selfinfo;
+    }
+  }
+
+  .self-intro {
+    width: 100%;
+
+    .intro-container {
+      @extend %selfintro;
+    }
+  }
+
+  .self-exp {
+    width: 100%;
+
+    .exp-container {
+      @extend %selfexp;
+    }
+  }
+
+  .self-skill {
+    width: 100%;
+
+    .skill-container {
+      @extend %selfskill;
+    }
+  }
+
+  .self-project {
+    width: 100%;
+    display: flex;
+
+    .project-container {
+      @extend %selfproject;
+    }
+  }
+}

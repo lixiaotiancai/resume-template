@@ -1,0 +1,202 @@
+@keyframes avatarShadowShining {
+    from {
+        box-shadow: 0 0 0 5px #FFFF00;
+        -webkit-box-shadow: 0 0 0 5px #FFFF00;
+    }
+    to {
+        box-shadow: 0 0 20px 10px #FFFF00;
+        -webkit-box-shadow: 0 0 20px 10px #FFFF00;
+    }
+}
+
+%selfinfo {
+  width: 100%;
+  height: 100vh;
+  min-height: 500px;
+  display: flex;
+
+  .info-contact {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url("http://coding.imweb.io/img/project/resume/bg.png");
+    background-color: rgb(130,189,164);
+    color: #fff;
+
+    .info-avatar-wrapper {
+      height: 100px;
+      width: 100px;
+      border-radius: 50%;
+      box-shadow: 0 0 0 5px #FFFF00;
+      background: #fff;
+      overflow: hidden;
+
+      &:hover {
+        animation: avatarShadowShining 0.5s linear alternate infinite;
+      }
+    }
+
+    .info-name-wrapper {
+      margin-top: 12px;
+      font-size: 30px;
+
+      &:hover {
+        text-shadow: 2px 2px 3px #fff;
+        cursor: pointer;
+      }
+    }
+
+    .info-contact-wrapper {
+      margin-top: 20px;
+      font-size: 17px;
+      padding: 3px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+
+        .info-contact-item {
+          line-height: 40px;
+
+          &:hover {
+            border-radius: 5px;
+            box-shadow: 0 0 4px 3px #00FF00;
+            text-shadow: 1px 1px 2px #fff;
+          }
+
+          .icon {
+            font-size: 20px;
+          }
+
+          .contact-item-link {
+            color: #fff;
+          }
+        }
+    }
+  }
+
+  .info-msg {
+    // min-width: 480px;
+    width: 60%;
+    height: 100%;
+    background: url("http://coding.imweb.io/img/project/resume/bg.png");
+    background-color: rgb(161,215,180);
+    display: flex;
+    flex-direction: column;
+    color: #f5f5f5;
+
+    .info-nickname-wrapper {
+      margin-top: 15%;
+      font-size: 70px;
+      display: flex;
+      justify-content: center;
+
+      .info-name-firstname {
+        color: #FFFF00;
+      }
+
+      .info-name-lastname {
+        color: #fff;
+      }
+    }
+
+    .info-slogan-wrapper {
+      height: 10%;
+      font-size: 21px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      text-align: center;
+    }
+
+    .info-msg-wrapper {
+      height: 40%;
+      margin: auto 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+
+      .info-msg-item {
+        width: 40%;
+        height: 60px;
+        border-radius: 5px;
+        box-shadow: 3px 3px 3px rgba(0,0,0,0.2);
+        color: #fff;
+        font-size: 20px;
+        font-weight: 500;
+        flex: 0 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(255,255,255,0.1);
+        cursor: pointer;
+
+        &:hover {
+          transform: translate(-5px, -5px);
+          text-shadow: 3px 3px 8px #000;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px){
+  %selfinfo {
+    flex-direction: column;
+    width: 100%;
+    height: 200vh;
+    // min-width: 450px;
+    .info-contact {
+      width: 100%;
+      height: 100vh;
+
+      .info-avatar-wrapper {
+
+        &:active {
+          animation: avatarShadowShining 0.5s linear alternate infinite;
+        }
+      }
+
+      .info-contact-wrapper {
+
+        .info-contact-item {
+          margin-top: 5%;
+
+          &:acitve {
+            border-radius: 5px;
+            box-shadow: 0 0 4px 3px #00FF00;
+            text-shadow: 1px 1px 2px #fff;
+          }
+        }
+      }
+    }
+
+    .info-msg {
+      width: 100%;
+      height: 100vh;
+
+      .info-slogan-wrapper {
+        font-size: 18px;
+      }
+
+      .info-msg-wrapper {
+        height: 60%;
+        justify-content: center;
+        align-items: center;
+
+        .info-msg-item {
+          width: 95%;
+          height: 8vh;
+
+          &:acitve {
+            transform: translate(-5px, -5px);
+            text-shadow: 3px 3px 8px #000;
+          }
+        }
+      }
+    }
+  }
+}
